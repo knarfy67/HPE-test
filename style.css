@@ -632,6 +632,7 @@ footer {
 
   .footer-reponsive {
     display: block;
+    margin: 0 auto;
   }
 
   .footer-line {
@@ -645,7 +646,7 @@ footer {
   }
 
   .footer-logo {
-    height: 250px;
+    height: 200px;
     padding-bottom: 80px;
   }
 
