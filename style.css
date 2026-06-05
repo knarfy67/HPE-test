@@ -131,6 +131,7 @@ nav a.btn-nav {
   position: absolute;
   right: 0;
   top: 0;
+  opacity: 70%;
 }
 
 /* The Text Box */
@@ -346,12 +347,27 @@ nav a.btn-nav {
 
 /* --- Footer --- */
 footer {
+  position: relative; /* Essential for positioning the dots layer */
+  background-color: #ffffff;
+  padding: 60px 5%;
+  z-index: 1; /* Ensures footer content stays on top */
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-image: url("assets/dots-big.png");
   background-position: center center;
   background-repeat: repeat;
-  background-color: #ffffff;
-  padding: 60px 5%;
+  opacity: 0.5; /* Change this value (0.1 to 0.9) to control the dot opacity */
+  z-index: -1; /* Puts the dots behind your footer text */
+  pointer-events: none; /* Prevents the layer from interfering with clicks */
 }
+
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -541,11 +557,6 @@ footer {
     font-size: 12px;
     line-height: 1.6;
     z-index: 1;
-  }
-
-  .hand-help {
-    position: absolute;
-    /* right: -120px; */
   }
 
   .hero-content h1 {
